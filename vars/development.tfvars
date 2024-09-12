@@ -1,7 +1,7 @@
 aws_region                = "us-west-1"
 lambda_role_name          = "my_lambda_role"
 lambda_function_name      = "my-uppercase-api"
-lambda_filename           = "my_lambda_function.zip"
+lambda_filename           = "lambda_function.zip"
 lambda_handler            = "my_lambda_function.lambda_handler"
 lambda_runtime            = "python3.9"
 api_gateway_name          = "My Uppercase API"
