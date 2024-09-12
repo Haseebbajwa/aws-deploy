@@ -1,7 +1,7 @@
 variable "aws_region" {
   description = "AWS region to deploy resources in"
   type        = string  # Change to your desired region
-  default     = "us-west-1"
+  default     = "eu-west-1"
 }
 
 variable "lambda_role_name" {
