@@ -28,7 +28,7 @@ variable "lambda_filename" {
 variable "lambda_handler" {
   description = "Handler for Lambda function"
   type        = string
-  default = "my_lambda_function.lambda_handler"
+  default = "lambda_function.lambda_handler"
 
 }
 
