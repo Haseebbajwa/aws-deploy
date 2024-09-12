@@ -4,10 +4,12 @@ variable "aws_region" {
   default     = "eu-west-1"
 }
 
-variable "lambda_role_name" {
-  description = "IAM role name for Lambda"
+
+
+variable "lambda_role_arn" {
+  description = "arn of lambda execution role"
   type        = string
-  default     = "my_lambda_role"
+  default     = "arn:aws:iam::820242942459:role/my_lambda_role"
 }
 
 variable "lambda_function_name" {
