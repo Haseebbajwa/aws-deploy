@@ -1,37 +1,61 @@
 variable "aws_region" {
-       description = "The AWS region to create things in." 
-       default     = "eu-west-1" 
+  description = "AWS region to deploy resources in"
+  type        = string  # Change to your desired region
 }
 
-variable "key_name" { 
-    description = " SSH keys to connect to ec2 instance" 
-    default     =  "test" 
+variable "lambda_role_name" {
+  description = "IAM role name for Lambda"
+  type        = string
 }
 
-variable "instance_type" { 
-    description = "instance type for ec2" 
-    default     =  "t2.micro" 
+variable "lambda_function_name" {
+  description = "Name of the Lambda function"
+  type        = string
 }
 
-variable "security_group" { 
-    description = "Name of security group" 
-    default     = "jenkins-sgroup-dec-2021" 
+variable "lambda_filename" {
+  description = "Name of the zip file containing Lambda function"
+  type        = string
+
 }
 
-variable "tag_name" { 
-    description = "Tag Name of for Ec2 instance" 
-    default     = "my-ec2-instance" 
-} 
-variable "ami_id" { 
-    description = "AMI for Ubuntu Ec2 instance" 
-    default     = "ami-02361d9cddb64fe8a" 
+variable "lambda_handler" {
+  description = "Handler for Lambda function"
+  type        = string
+
 }
 
-variable "tags" {
-    type        = map
-    description = "(Optional) A mapping of tags to assign to the bucket."
-    default     = {
-        environment = "DEV"
-        terraform   = "true"
-    }
+variable "lambda_runtime" {
+  description = "Runtime environment for Lambda function"
+  type        = string
+}
+
+variable "lambda_environment_variables" {
+  description = "Environment variables for Lambda function"
+  type        = map(string)
+  default     = {
+    ENV = "development"
+  }
+}
+
+variable "api_gateway_name" {
+  description = "Name of the API Gateway"
+  type        = string
+}
+
+variable "api_gateway_resource_path" {
+  description = "Resource path for API Gateway"
+  type        = string
+}
+
+variable "api_gateway_method" {
+  description = "HTTP method for API Gateway"
+  type        = string
+  default     = "POST"
+}
+
+variable "api_gateway_stage_name" {
+  description = "Deployment stage name for API Gateway"
+  type        = string
+
 }
