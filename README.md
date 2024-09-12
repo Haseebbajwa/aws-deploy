@@ -21,6 +21,7 @@ Body: JSON object containing the string to be converted.
 }
 
 **Response**
+
 Status Code: 200 OK
 
 Content-Type: application/json
@@ -29,6 +30,7 @@ Body: JSON object containing the uppercase version of the string.
 {
   "uppercase": "YOUR_TEXT_HERE"
 }
+
 **Error Responses:**
 
 **Status Code** : 400 Bad Request
@@ -38,6 +40,7 @@ Body:
   "error": "Empty body in request"
 }
 **Status Code** : 400 Bad Request
+
 Body:
 {
   "error": "Invalid JSON format"
