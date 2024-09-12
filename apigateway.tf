@@ -21,6 +21,8 @@ resource "aws_api_gateway_method_response" "uppercase_method_response" {
   resource_id = aws_api_gateway_resource.uppercase_resource.id
   http_method = var.api_gateway_method
   status_code = "200"
+  depends_on = [aws_api_gateway_method.uppercase_method]
+
 }
 
 # Link API Gateway to Lambda
@@ -31,11 +33,17 @@ resource "aws_api_gateway_integration" "lambda_integration" {
   integration_http_method = "POST"
   type                    = "AWS_PROXY"
   uri                     = aws_lambda_function.uppercase_api.invoke_arn
+  depends_on = [aws_api_gateway_method_response.uppercase_method_response]
+
 }
 
 # Deploy the API
 resource "aws_api_gateway_deployment" "api_deployment" {
-  depends_on  = [aws_api_gateway_integration.lambda_integration]
+  depends_on  = [
+    aws_api_gateway_integration.lambda_integration,
+    aws_api_gateway_method_response.uppercase_method_response
+  ]
+
   rest_api_id = aws_api_gateway_rest_api.uppercase_api.id
   stage_name  = var.api_gateway_stage_name
 }
