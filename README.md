@@ -39,6 +39,7 @@ Body:
 {
   "error": "Empty body in request"
 }
+
 **Status Code** : 400 Bad Request
 
 Body:
@@ -47,7 +48,9 @@ Body:
 }
 
 **Example Usage**
+
 **CURL Command**
+
 To convert the string "hello" to uppercase, use the following curl command:
 
 curl -X POST "https://xn8pmstq6e.execute-api.eu-west-1.amazonaws.com/development/uppercase" \
