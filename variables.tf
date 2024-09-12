@@ -9,7 +9,7 @@ variable "aws_region" {
 variable "lambda_role_arn" {
   description = "arn of lambda execution role"
   type        = string
-  default     = "arn:aws:iam::820242942459:role/my_lambda_role"
+  default     = "arn:aws:iam::*:role/my_lambda_role"
 }
 
 variable "lambda_function_name" {
