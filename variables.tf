@@ -41,6 +41,7 @@ variable "lambda_environment_variables" {
 variable "api_gateway_name" {
   description = "Name of the API Gateway"
   type        = string
+  default     = "My Uppercase API"
 }
 
 variable "api_gateway_resource_path" {
