@@ -1,33 +1,39 @@
 variable "aws_region" {
   description = "AWS region to deploy resources in"
   type        = string  # Change to your desired region
+  default     = "us-west-1"
 }
 
 variable "lambda_role_name" {
   description = "IAM role name for Lambda"
   type        = string
+  default     = "my_lambda_role"
 }
 
 variable "lambda_function_name" {
   description = "Name of the Lambda function"
   type        = string
+  default     = "my-uppercase-api"
 }
 
 variable "lambda_filename" {
   description = "Name of the zip file containing Lambda function"
   type        = string
+  default = "lambda_function.zip"
 
 }
 
 variable "lambda_handler" {
   description = "Handler for Lambda function"
   type        = string
+  default = "my_lambda_function.lambda_handler"
 
 }
 
 variable "lambda_runtime" {
   description = "Runtime environment for Lambda function"
   type        = string
+  default = "python3.9"
 }
 
 variable "lambda_environment_variables" {
@@ -47,6 +53,7 @@ variable "api_gateway_name" {
 variable "api_gateway_resource_path" {
   description = "Resource path for API Gateway"
   type        = string
+  default = "uppercase"
 }
 
 variable "api_gateway_method" {
@@ -58,5 +65,5 @@ variable "api_gateway_method" {
 variable "api_gateway_stage_name" {
   description = "Deployment stage name for API Gateway"
   type        = string
-
+  default = "development"
 }
