@@ -1,5 +1,6 @@
 **API Documentation: Uppercase-as-a-Service**
 **Overview**
+
 Uppercase-as-a-Service provides a simple API to convert text to uppercase. This service is designed to transform input strings to uppercase using a straightforward HTTP API.
 
 **Base URL**
