@@ -50,7 +50,7 @@ Body:
 **CURL Command**
 To convert the string "hello" to uppercase, use the following curl command:
 
-curl -X POST "https://<api-id>.execute-api.<region>.amazonaws.com/<stage>/uppercase" \
+curl -X POST "https://xn8pmstq6e.execute-api.eu-west-1.amazonaws.com/development/uppercase" \
      -H "Content-Type: application/json" \
      -d '{"string": "hello"}'
 
